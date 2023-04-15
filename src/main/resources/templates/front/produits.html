@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+	<title>Plateforme de Gestion de Stock</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Parallax HTML5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Meghna Template v1.0">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+	<!-- CSS
+		================================================== -->
+	<!-- Fontawesome Icon font -->
+	<link rel="stylesheet" th:href="@{/front/plugins/themefisher-font/style.css}">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" th:href="@{/front/plugins/bootstrap/bootstrap.min.css}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" th:href="@{/front/plugins/animate-css/animate.css}">
+	<!-- Magnific popup css -->
+	<link rel="stylesheet" th:href="@{/front/plugins/magnific-popup/dist/magnific-popup.css}">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" th:href="@{/front/plugins/slick-carousel/slick.css}">
+	<link rel="stylesheet" th:href="@{/front/plugins/slick-carousel/slick-theme.css}">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" th:href="@{/front/css/style.css}">
+
+
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar-nav" data-offset="80">
+	<!--
+	Start Preloader
+	==================================== -->
+	<div class="preloader">
+		<div class="sk-cube-grid">
+			<div class="sk-cube sk-cube1"></div>
+			<div class="sk-cube sk-cube2"></div>
+			<div class="sk-cube sk-cube3"></div>
+			<div class="sk-cube sk-cube4"></div>
+			<div class="sk-cube sk-cube5"></div>
+			<div class="sk-cube sk-cube6"></div>
+			<div class="sk-cube sk-cube7"></div>
+			<div class="sk-cube sk-cube8"></div>
+			<div class="sk-cube sk-cube9"></div>
+		</div>
+	</div>
+	<!-- End Preloader
+	==================================== -->
+
+<!-- 
+Fixed Navigation
+==================================== -->
+
+ <!-- 
+Sticky Navigation
+==================================== -->
+
+
+<div th:replace="fragments/headerFront :: header"/>
+
+
+<section id="posts" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeInDown">
+					<h2> List <span class="color">Produits</span></h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+		
+
+			<!-- single blog post -->
+			<article class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="200ms"  th:each="article : ${articles}">
+				<div class="post-block">
+					<div id="gallery-post" class="media-wrapper">
+						<div class="item">
+							<img th:src="@{'/uploads/'+ ${article.photoFace}}" alt="blog post" class="img-fluid">
+						</div>
+						<div class="item">
+							<img th:src="@{'/uploads/'+ ${article.photoProfil}}" alt="blog post" class="img-fluid">
+						</div>
+						
+					</div>
+
+					<div class="content">
+						<h3  th:text="${article.label}"><a href="blog.html">Simple Slider Post</a></h3>
+						<s><font color="FF0000" ><p color="red" th:text="${article.price}"></p></font></s>
+						<h4 ><font color="00FF00"><span th:text="${article.pricePromo}" ></span> dt</font></h4>
+						<p th:text="${article.description}">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+							moon officia aute, non skateboard dolor brunch.</p>
+						<a class="btn btn-transparent" th:href="@{/article/show/{id}(id=${article.id})}">Details</a>
+					</div>
+				</div>
+			</article>
+			<!-- end single blog post -->
+
+			<!-- single blog post --
+			<article class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="400ms">
+				<div class="post-block">
+					<div class="media-wrapper">
+						<img th:src="@{/front/images/blog/blog-post-6.jpg}" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="blog.html">Simple Image Post</a></h3>
+						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+							moon officia aute, non skateboard dolor brunch.</p>
+						<a class="btn btn-transparent" href="blog-single.html">Read more</a>
+					</div>
+				</div>
+			</article> -->
+			<!-- end single blog post -->
+
+			
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section>
+<!-- end Contact Area
+========================================== -->
+<div th:replace="fragments/footerFront :: footer"/>
+ <!-- end footer -->
+
+	<!-- 
+	Essential Scripts
+	=====================================-->
+	
+	<!-- Main jQuery -->
+	<script th:src="@{/front/plugins/jquery/jquery.min.js}"></script>
+	<!-- Bootstrap 3.1 -->
+	<script th:src="@{/front/plugins/bootstrap/bootstrap.min.js}"></script>
+	<!-- Slick Carousel -->
+	<script th:src="@{/front/plugins/slick-carousel/slick.min.js}"></script>
+	<!-- Portfolio Filtering -->
+	<script th:src="@{/front/plugins/filterzr/jquery.filterizr.min.js}"></script>
+	<!-- Magnific popup -->
+	<script th:src="@{/front/plugins/magnific-popup/dist/jquery.magnific-popup.min.js}"></script>
+	<!-- Google Map API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+	<script th:src="@{/front/plugins/google-map/gmap.js}"></script>
+	<!-- wow.min Script -->
+	<script th:src="@{/front/plugins/wow/wow.min.js}"></script>
+	<!-- Custom js -->
+	<script th:src="@{/front/js/script.js}"></script>
+	
+	</body>
+</html>

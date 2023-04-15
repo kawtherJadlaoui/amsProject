@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+	<title>Plateforme de gestion de Stock</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Parallax HTML5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Meghna Template v1.0">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="meghna" />
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" th:href="@{/front/images/favicon.png}" />
+
+	<!-- CSS
+		================================================== -->
+	<!-- Fontawesome Icon font -->
+	<link rel="stylesheet" th:href="@{/front/plugins/themefisher-font/style.css}">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" th:href="@{/front/plugins/bootstrap/bootstrap.min.css}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" th:href="@{/front/plugins/animate-css/animate.css}">
+	<!-- Magnific popup css -->
+	<link rel="stylesheet" th:href="@{/front/plugins/magnific-popup/dist/magnific-popup.css}">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" th:href="@{/front/plugins/slick-carousel/slick.css}">
+	<link rel="stylesheet" th:href="@{/front/plugins/slick-carousel/slick-theme.css}">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" th:href="@{/front/css/style.css}">
+
+
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar-nav" data-offset="80">
+	<!--
+	Start Preloader
+	==================================== -->
+	<div class="preloader">
+		<div class="sk-cube-grid">
+			<div class="sk-cube sk-cube1"></div>
+			<div class="sk-cube sk-cube2"></div>
+			<div class="sk-cube sk-cube3"></div>
+			<div class="sk-cube sk-cube4"></div>
+			<div class="sk-cube sk-cube5"></div>
+			<div class="sk-cube sk-cube6"></div>
+			<div class="sk-cube sk-cube7"></div>
+			<div class="sk-cube sk-cube8"></div>
+			<div class="sk-cube sk-cube9"></div>
+		</div>
+	</div>
+	<!-- End Preloader
+	==================================== -->
+
+ <!--
+Welcome Slider
+==================================== -->
+
+ 
+<div th:replace="fragments/headerFront :: slider"/>
+ <!-- 
+Sticky Navigation
+==================================== -->
+
+
+<div th:replace="fragments/headerFront :: header"/>
+<!--
+End Sticky Navigation
+==================================== -->
+
+<!--
+		Start About Section
+		==================================== -->
+		<a name="about"></a>
+<section class="bg-one about section" id="about">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+					<h2>About <span class="color">Us</span> </h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+			<!-- About item -->
+			<div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms">
+				<div class="block">
+					<div class="icon-box">
+						<i class="tf-tools"></i>
+					</div>
+					<!-- Express About Yourself -->
+					<div class="content text-center">
+						<h3 class="ddd">We're Creative</h3>
+						<p>Plateforme de Gestion de Stock, Crud articles. Crud Fournisseurs, Crud User, Crud Actualités creer par Ams Project 2023 </p>
+					</div>
+				</div>
+			</div>
+			<!-- End About item -->
+
+			<!-- About item -->
+			<div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="250ms">
+				<div class="block">
+					<div class="icon-box">
+						<i class="tf-strategy"></i>
+					</div>
+					<!-- Express About Yourself -->
+					<div class="content text-center">
+						<h3>We're Professional</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos
+							provident laborum eum dignissimos</p>
+					</div>
+				</div>
+			</div>
+			<!-- End About item -->
+
+			<!-- About item -->
+			<div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+				<div class="block kill-margin-bottom">
+					<div class="icon-box">
+						<i class="tf-anchor2"></i>
+					</div>
+					<!-- Express About Yourself -->
+					<div class="content text-center">
+						<h3>We're Genius</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos
+							provident laborum eum dignissimos</p>
+					</div>
+				</div>
+			</div>
+			<!-- End About item -->
+
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
+
+<section class="section about-2 padding-0 bg-dark" id="logo">
+	<div class="container-fluid p-0">
+		<div class="row no-gutters align-items-center">
+			<div class="col-lg-6">
+				<img class="img-fluid" th:src="@{/front/images/about/about-business-man.jpg}" alt="">
+			</div>
+			<div class="col-lg-6">
+				<div class="content-block">
+					<h2>Plateforme de gestion de Stock</h2>
+					<!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora itaque, autem dolores culpa cum mollitia voluptate nesciunt voluptatibus quasi.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eveniet vel et mollitia nemo corporis autem dolores culpa cum mollitia voluptate</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, magnam.</p> 
+					<div class="row">
+						<div class="col-md-6">
+							<div class="media">
+								<div class="pull-left">
+									<i class="tf-circle-compass"></i>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">SEO Optimized</h4>
+									<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus
+										eos saepe</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="media">
+								<div class="pull-left">
+									<i class="tf-hotairballoon"></i>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Easy Customization</h4>
+									<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus
+									</p>
+								</div>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--
+Start Call To Action
+==================================== -->
+<section class="call-to-action section-sm bg-1 overly">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2>Statistiques</h2>
+				<!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? <br> Omnis accusantium ea reiciendis, fugit commodi nostrum.</p>
+				<a href="contact.html" class="btn btn-main">Start a project with us</a> -->
+			</div>
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
+
+<!-- Start Services Section
+==================================== -->
+ <!-- End section -->
+
+<!-- Start Team Skills
+		=========================================== -->
+
+<!-- End section -->
+
+<!-- Start Portfolio Section
+=========================================== -->
+
+ <!-- End section -->
+
+<!--
+Start Counter Section
+==================================== -->
+
+<section id="counter" class="parallax-section bg-1 section overly">
+	<div class="container">
+		<div class="row">
+
+			<!-- first count item -->
+			<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms">
+				<div class="counters-item">
+					<i class="tf-ion-android-happy"></i>
+					<span class="jsCounter" th:text="${nbr}" >0</span>
+
+					<h3>Nombre Fournisseurs</h3>
+				</div>
+			</div>
+			<!-- end first count item -->
+
+			<!-- second count item -->
+			<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms"
+				data-wow-delay="200ms">
+				<div class="counters-item">
+					<i class="tf-ion-archive"></i>
+					<span class="jsCounter" th:text="${nb}" >0</span>
+					<h3>nombre Produits</h3>
+				</div>
+			</div>
+			<!-- end second count item -->
+
+			<!-- third count item -->
+			<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms"
+				data-wow-delay="400ms">
+				<div class="counters-item">
+					<i class="tf-ion-thumbsup"></i>
+					<span class="jsCounter" data-count="2">0</span>
+					<h3>Produits épuisés</h3>
+
+				</div>
+			</div>
+			<!-- end third count item -->
+
+			<!-- fourth count item -->
+			<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms"
+				data-wow-delay="600ms">
+				<div class="counters-item kill-margin-bottom">
+					<i class="tf-ion-coffee"></i>
+					<span class="jsCounter" data-count="4">0</span>
+					<h3>Nombre Users</h3>
+				</div>
+			</div>
+			<!-- end fourth count item -->
+
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section> <!-- end section -->
+<a name="posts"></a>
+
+<!-- 
+Start Our Team
+=========================================== -->
+
+ <!-- End section -->
+
+<!-- Start Pricing section
+=========================================== -->
+
+ <!-- End section -->
+
+<!-- Start Testimonial
+=========================================== -->
+
+ <!-- End Section -->
+
+<!-- Start Blog Section
+=========================================== -->
+
+
+ <!-- end section -->
+
+<!-- Srart Contact Us
+=========================================== -->
+
+ <!-- end section -->
+
+<!-- end Contact Area
+========================================== -->
+<div th:replace="fragments/footerFront :: footer"/>
+ <!-- end footer -->
+
+	<!-- 
+	Essential Scripts
+	=====================================-->
+	
+	<!-- Main jQuery -->
+	<script th:src="@{/front/plugins/jquery/jquery.min.js}"></script>
+	<!-- Bootstrap 3.1 -->
+	<script th:src="@{/front/plugins/bootstrap/bootstrap.min.js}"></script>
+	<!-- Slick Carousel -->
+	<script th:src="@{/front/plugins/slick-carousel/slick.min.js}"></script>
+	<!-- Portfolio Filtering -->
+	<script th:src="@{/front/plugins/filterzr/jquery.filterizr.min.js}"></script>
+	<!-- Magnific popup -->
+	<script th:src="@{/front/plugins/magnific-popup/dist/jquery.magnific-popup.min.js}"></script>
+	<!-- Google Map API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+	<script th:src="@{/front/plugins/google-map/gmap.js}"></script>
+	<!-- wow.min Script -->
+	<script th:src="@{/front/plugins/wow/wow.min.js}"></script>
+	<!-- Custom js -->
+	<script th:src="@{/front/js/script.js}"></script>
+	
+	</body>
+</html>

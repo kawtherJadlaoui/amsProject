@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AMS Project</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/back/images/favicon.png}">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/back/plugins/tables/css/datatable/dataTables.bootstrap4.min.css}" rel="stylesheet">
+    <link th:href="@{/back/css/style.css}" rel="stylesheet">
+</div>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img th:src="@{/back/images/logo.png}" alt=""> </b>
+                    <span class="logo-compact"><img th:src="@{/back/images/logo-compact.png}" alt=""></span>
+                    <span class="brand-title">
+                        <img th:src="@{/back/images/logo-text.png}" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+       <div th:replace="fragments/headerBack :: header"/>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div th:replace="fragments/sidebarBack :: sidebar"/>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">liste Actualites</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+<h2 align="center">Liste des Actualités</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div th:switch="${actualites}" class="card-body">
+								
+                <div th:switch="${actualites}">
+                                
+                                     <p class="my-5">
+                      
+						 <a th:href="@{/actualite/add}"><button type="button" class="btn mb-1 btn-primary">New Actualité</button></a>
+                    </p>
+                                <h4 class="card-title"></h4>
+                               <h2 th:case="null">No Actualite yet!</h2>
+                                <div th:case="*" >
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                         <th>Titre</th>
+                                        <th>description</th>
+                                        <th>Date publication</th>
+                                        <th>Show</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                        
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr th:each="actualite : ${actualites}">
+                                        <td th:text="${actualite.titre}"></td>
+                                        
+                                        <td th:text="${actualite.description}"></td>
+                                         <td th:text="${actualite.datePub}"></td>
+                                         
+                                         <td><a th:href="@{/actualite/show/{id}(id=${actualite.id})}" class="btn btn-primary"><i class="fas fa-user-show ml-2"></i>details</a></td>
+
+                                        
+                                     <td align="center"><span><font size="4"><a th:href="@{/actualite/edit/{id}(id=${actualite.id})}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted m-r-5" ></i> </a></span></font></td>       
+
+
+     <td align="center"><span ><font size="4"><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce actualite?');" th:href="@{/actualite/delete/{id}(id=${actualite.id})}" data-toggle="tooltip" data-placement="top" title="Delete"><i   class="fa fa-close color-danger"></i></a></font></span>
+  </td>
+                                            </tr>
+                                            
+                                            
+                                           
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+       <div th:replace="fragments/footerBack :: footer"/>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script th:src="@{/back/plugins/common/common.min.js}"></script>
+    <script th:src="@{/back/js/custom.min.js}"></script>
+    <script th:src="@{/back/js/settings.js}"></script>
+    <script th:src="@{/back/js/gleek.js}"></script>
+    <script th:src="@{/back/js/styleSwitcher.js}"></script>
+
+    <script th:src="@{/back/plugins/tables/js/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/back/plugins/tables/js/datatable/dataTables.bootstrap4.min.js}"></script>
+    <script th:src="@{/back/plugins/tables/js/datatable-init/datatable-basic.min.js}"></script>
+
+</body>
+
+</html>

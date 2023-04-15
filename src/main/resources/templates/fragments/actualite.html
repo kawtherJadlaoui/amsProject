@@ -1,0 +1,36 @@
+<div th:fragment="ac">
+
+<section id="posts" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeInDown">
+					<h2> Latest <span class="color">Post</span></h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+			<!-- single blog post -->
+			<article class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="500ms" th:each="actualite : ${actualites}">
+				<div class="post-block">
+					<div class="media-wrapper">
+						<img th:src="@{'/uploadsActualite/'+ ${actualite.picture}}" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+					<div class="content">
+						<h3><a th:text="${actualite.titre}">Simple Image Post</a></h3>
+						<p th:text="${actualite.description}">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+							moon officia aute, non skateboard dolor brunch.</p>
+						<a class="btn btn-transparent" th:href="@{/actualite/show/{id}(id=${actualite.id})}">Read more</a>
+					</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+
+
+			
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section>
+</div>

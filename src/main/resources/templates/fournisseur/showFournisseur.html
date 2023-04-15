@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plateforme de gestion de Stock </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/back/images/favicon.png}">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" th:href="@{/back/plugins/chartist/css/chartist.min.css}">
+    <link rel="stylesheet" th:href="@{/back/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/back/css/style.css}" rel="stylesheet">
+
+</head>
+
+<body>
+<!--*******************
+Preloader start
+********************-->
+<div id="preloader">
+<div class="loader">
+<svg class="circular" viewBox="25 25 50 50">
+<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+</svg>
+</div>
+</div>
+<!--*******************
+Preloader end
+********************-->
+<!--**********************************
+Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+<!--**********************************
+Nav header start
+***********************************-->
+<div class="nav-header">
+<div class="brand-logo">
+<a href="index.html">
+<b class="logo-abbr"><img th:src="@{/back/images/logo.png}" alt=""> </b>
+<span class="logo-compact"><img th:src="@{/back/images/logo-compact.png}" alt=""></span>
+<span class="brand-title">
+<img th:src="@{/back/images/logo-text.png}" alt="">
+</span>
+</a>
+</div>
+</div>
+<!--**********************************
+Nav header end
+***********************************-->
+<!--**********************************
+Header start
+***********************************-->
+<div th:replace="fragments/headerBack :: header"/>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+<!--**********************************
+Sidebar start
+***********************************-->
+<div th:replace="fragments/sidebarBack :: sidebar"/>
+<!--**********************************
+Sidebar end
+***********************************-->
+<!--**********************************
+Content body start
+***********************************-->
+<div class="content-body">
+<div class="container-fluid mt-3">
+
+
+
+
+           
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Logo</h4>
+                                    <div><div class="text-center">
+                                    <img th:src="@{'/uploadsProvider/'+ ${fournisseur.logo}}" class="rounded-circle" width="280px" height="280px">
+                                    <h5 class="mt-3 mb-1">Nom </h5>
+                                    <p class="m-0"><p th:text="${fournisseur.name}">name</p></p>
+                                    <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
+                                </div></div>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
+                            <div class="card card-widget">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Informations  </h5>
+                                    <h2 class="mt-4">5680</h2>
+                                    <span>Total Articles</span>
+                                    <div class="mt-4">
+                                        <h4>Email</h4>
+                                        <h6><p th:text="${fournisseur.email}">email</p></h6>
+                                        <div class="progress mb-3" style="height: 7px">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4>Telephone</h4>
+                                        <h6 class="m-t-10 text-muted"><p th:text="${fournisseur.tel}">tel</p></h6>
+                                        <div class="progress mb-3" style="height: 7px">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4>Adresse</h4>
+                                        <h6><p th:text="${fournisseur.address}">address</p></h6>
+                                        <div class="progress mb-3" style="height: 7px">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+<div class="row">
+	
+<div class="col-lg-12">
+<div class="card">
+	
+<div class="card-body">
+	<h2>liste des articles</h2>
+<div class="active-member">
+<div class="table-responsive">
+<table class="table table-xs mb-0">
+<thead>
+<tr>
+<th></th>
+<th>id</th>
+<th>libellé</th>
+<th>prix</th>
+<th>prix promotion</th>
+<th>description</th>
+<th>Quantite Stock</th>
+<th>date Expiration</th>
+</tr>
+</thead>
+<tbody>
+	<tr th:each="article : ${articles}">
+
+	 <td><img th:src="@{'/uploadsArticle/'+ ${article.photoFace}}" class=" rounded-circle mr-3" alt=""></td>
+	 <td th:text="${article.id}"></td>
+<td th:text="${article.label}"></td>
+ <td th:text="${article.price}"></td>
+ <td th:text="${article.pricePromo}"></td>
+<td th:text="${article.description}"></td>
+<td th:text="${article.quantiteStock}"></td>
+<td th:text="${article.dateExpiration}"></td>
+
+</tr>
+
+
+
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="form-group col-md-8">
+              <a th:href="@{/fournisseur/list}"> <input type="button" class="btn btn-primary" value="return to fournisseurs list"></a>
+
+            </div>
+</div> 
+</div>
+</div>
+
+
+</div>
+<!-- #/ container -->
+</div>
+<!--**********************************
+Content body end
+***********************************-->
+<!--**********************************
+Footer start
+***********************************-->
+<div th:replace="fragments/footerBack :: footer"/>
+<!--**********************************
+Footer end
+***********************************-->
+</div>
+<!--**********************************
+Main wrapper end
+***********************************-->
+<!--**********************************
+Scripts
+***********************************-->
+<script th:src="@{/back/plugins/common/common.min.js}"></script>
+<script th:src="@{/back/js/custom.min.js}"></script>
+<script th:src="@{/back/js/settings.js}"></script>
+<script th:src="@{/back/js/gleek.js}"></script>
+<script th:src="@{/back/js/styleSwitcher.js}"></script>
+<!-- Chartjs -->
+<script th:src="@{/back/plugins/chart.js/Chart.bundle.min.js}"></script>
+<!-- Circle progress -->
+<script th:src="@{/back/plugins/circle-progress/circle-progress.min.js}"></script>
+<!-- Datamap -->
+<script th:src="@{/back/plugins/d3v3/index.js}"></script>
+<script th:src="@{/back/plugins/topojson/topojson.min.js}"></script>
+<script th:src="@{/back/plugins/datamaps/datamaps.world.min.js}"></script>
+<!-- Morrisjs -->
+<script th:src="@{/back/plugins/raphael/raphael.min.js}"></script>
+<script th:src="@{/back/plugins/morris/morris.min.js}"></script>
+<!-- Pignose Calender -->
+<script th:src="@{/back/plugins/moment/moment.min.js}"></script>
+<script th:src="@{/back/plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
+<!-- ChartistJS -->
+<script th:src="@{/back/plugins/chartist/js/chartist.min.js}"></script>
+<script th:src="@{/back/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
+<script th:src="@{/back/js/dashboard/dashboard-1.js}"></script>
+</body>
+</html>

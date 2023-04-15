@@ -1,0 +1,145 @@
+
+<!doctype html>
+                        <html>
+                            <head>
+								 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plateforme de gestion de Stock </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/back/images/favicon.png}">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" th:href="@{/back/plugins/chartist/css/chartist.min.css}">
+    <link rel="stylesheet" th:href="@{/back/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/back/css/style.css}" rel="stylesheet">
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title>Snippet - GoSNippets</title>
+                                <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='' rel='stylesheet'>
+                                <style>body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f5f5f5
+}
+
+.hedding {
+    font-size: 20px;
+    color: #ab8181;
+}
+
+.main-section {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 5%);
+}
+
+.left-side-product-box img {
+    width: 110%;
+}
+
+.left-side-product-box .sub-img img {
+    margin-top: 5px;
+    width: 115px;
+    height: 115px;
+}
+
+.right-side-pro-detail span {
+    font-size: 15px;
+}
+
+.right-side-pro-detail p {
+    font-size: 25px;
+    color: #a1a1a1;
+}
+
+.right-side-pro-detail .price {
+    color: #E45641;
+}
+.right-side-pro-detail .price-pro {
+    color: rgb(128, 255, 128);
+}
+
+.right-side-pro-detail .tag-section {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.pro-box-section .pro-box img {
+    width: 100%;
+    height: 200px;
+}
+
+@media (min-width:360px) and (max-width:640px) {
+    .pro-box-section .pro-box img {
+        height: auto;
+    }
+}</style>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+                                <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
+                            </head>
+                            
+                            <body oncontextmenu='return false' class='snippet-body'>
+								
+                            <div class="container">
+    <div class="col-lg-8 border p-3 main-section bg-white">
+        <div class="row hedding m-0 pl-3 pt-0 pb-3">
+            Product Detail 
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-4 left-side-product-box pb-3">
+                <img th:src="@{'/uploads/'+ ${article.photoFace}}" class="border p-3">
+                <span class="sub-img">
+                    <img th:src="@{'/uploads/'+ ${article.photoFace}}" class="border p-2">
+                    <img th:src="@{'/uploads/'+ ${article.photoProfil}}" class="border p-2">
+                    
+
+                    
+                </span>
+            </div>
+            <div class="col-lg-8">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                   <p class="m-0 p-0 price"> <pdiv th:text="${article.label}">label</pdiv></p></span>
+
+                            
+                        </div>
+                        <div class="col-lg-12">
+			 <p class="tag-section"><strong>Prix :</strong> <a th:text="${article.price}"></a> dt</p>
+			 <p class="tag-section"><strong>Prix Promo  :</strong> <a th:text="${article.pricePromo}"></a> dt</p>
+
+                            <hr class="p-0 m-0">
+                        </div>
+                        <div class="col-lg-12 pt-2">
+                            <h5>Product Detail</h5>
+                            <span><p th:text="${article.description}">description</p></span>
+                            <hr class="m-0 pt-2 mt-2">
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="tag-section"><strong>Fournisseur :</strong> <a th:text="${article.fournisseur.name}"></a></p>
+                             <p class="tag-section"><strong>date Expiration : </strong><a th:text="${article.dateExpiration}"></a></p>
+                             <p class="tag-section"><strong>Quantité en Stock : </strong><a th:text="${article.quantiteStock}"></a></p>
+
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center pt-3">
+                <h4><a th:href="@{/article/list}"> <input type="button" class="btn btn-primary" value="return to Article list"></a></h4>
+            </div>
+        </div>
+       
+    </div>
+</div>
+                            <script type='text/javascript'></script>
+                            </body>
+                        </html>
